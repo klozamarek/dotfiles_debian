@@ -1,0 +1,44 @@
+# Created by newuser for 5.9
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"     # for user specific data
+export XDG_CACHE_HOME="$HOME/.cache"          # for user cached files
+
+# editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+export TERM='xterm-kitty'
+export PATH=$HOME/.local/bin:/snap/bin:$PATH
+export MANPAGER='nvim +Man!'
+
+# default browser
+export BROWSER="/usr/bin/firefox"
+export WWW_HOME="https://duckduckgo.com/lite"
+
+# +---------+
+# | ALIASES |
+# +---------+
+
+source "$XDG_CONFIG_HOME/zsh/aliases"
+
+# +---------+
+# | SCRIPTS |
+# +---------+
+
+source "$XDG_CONFIG_HOME/zsh/scripts.sh"
+
+# +--------+
+# | ranger |
+# +--------+
+
+# export RANGER_LOAD_DEFAULT_RC=FALSE     # skip loading the default config file for ranger
+[ -n "$RANGER_LEVEL" ] && PS1="R$RANGER_LEVEL $PS1"
+
+# +--------------+
+# | call plugins |
+# +--------------+
+
+eval "$(zoxide init zsh)"                          # call zoxide
+eval "$(atuin init zsh --disable-ctrl-r)"          # call atuin
+
+export PASSWORD_STORE_CLIP_TIME='90'    # set-up for 90 seconds clipboard clear for pass
