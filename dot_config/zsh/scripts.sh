@@ -182,11 +182,6 @@ vman() {
     fi
 }
 #--------------------------------------------
-# Run scratchpad 
-scratchpad() {
-    "$DOTFILES/zsh/scratchpad.sh"
-}
-#--------------------------------------------
 # Run script preventing shell run ranger run shell
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then
@@ -200,81 +195,10 @@ ranger() {
 # | sys management |
 # +----------------+
 
-# Run script to update Arch and others
-updatesys() {
-    sh $DOTFILES/update.sh
-}
 #--------------------------------------------
 # history statistics
 historystat() {
     history 0 | awk '{ if ($2 == "sudo") {print $3} else {print $2} }' | awk -v "FS=|" '{print $1}' | sort | uniq -c | sort -r -n | head -15
-}
-#--------------------------------------------
-# check if the package is installed
-# usage `_isInstalled "package_name"`
-# output 1 not installed; 0 already installed
-_isInstalled() {
-    package="$1";
-    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
-    if [ -n "${check}" ] ; then
-        echo "installed"; #'0' means 'true' in zsh
-        return; #true
-    fi;
-    echo "NOT installed"; #'1' means 'false' in zsh
-    return; #false
-}
-#--------------------------------------------
-# `_install <pkg>`
-_install() {
-    package="$1";
-
-    # If the package IS installed:
-    if [[ $(_isInstalled "${package}") == 0 ]]; then
-        echo "${package} is already installed.";
-        return;
-    fi;
-
-    # If the package is NOT installed:
-    if [[ $(_isInstalled "${package}") == 1 ]]; then
-        sudo pacman -S "${package}";
-    fi;
-}
-#--------------------------------------------
-# `_installMany <pkg1> <pkg2> ...`
-# Works the same as `_install` above,
-# but you can pass more than one package to this one.
-_installMany() {
-    # The packages that are not installed will be added to this array.
-    toInstall=();
-
-    for pkg; do
-        # If the package IS installed, skip it.
-        if [[ $(_isInstalled "${pkg}") == 0 ]]; then
-            echo "${pkg} is already installed.";
-            continue;
-        fi;
-
-        #Otherwise, add it to the list of packages to install.
-        toInstall+=("${pkg}");
-    done;
-
-    # If no packages were added to the "${toInstall[@]}" array,
-    #     don't do anything and stop this function.
-    if [[ "${toInstall[@]}" == "" ]] ; then
-        echo "All packages are already installed.";
-        return;
-    fi;
-
-    # Otherwise, install all the packages that have been added to the "${toInstall[@]}" array.
-    printf "Packages not installed:\n%s\n" "${toInstall[@]}";
-    sudo pacman -S "${toInstall[@]}";
-}
-#--------------------------------------------
-# list all user installed software with description
-
-list_apps() {
-
-    for line in "$(pacman -Qqe)"; do pacman -Qi $(echo "$line") ; done | perl -pe 's/ +/ /gm' | perl -pe 's/^(Groups +: )(.*)/$1($2)/gm' | perl -0777 -pe 's/^Name : (.*)\nVersion :(.*)\nDescription : ((?!None).*)?(?:.|\n)*?Groups :((?! \(None\)$)( )?.*)?(?:.|\n(?!Name))+/$1$2$4\n    $3/gm' | grep -A1 --color -P "^[^\s]+"
 }
 
 # +-------+

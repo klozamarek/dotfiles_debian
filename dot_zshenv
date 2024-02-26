@@ -1,1 +1,36 @@
 . "$HOME/.cargo/env"
+
+# Created by newuser for 5.9
+
+fpath=($XDG_CONFIG_HOME/zsh/external $fpath)
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"     # for user specific data
+export XDG_CACHE_HOME="$HOME/.cache"          # for user cached files
+
+# editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+export TERM='xterm-kitty'
+export PATH=$HOME/.local/bin:/snap/bin:$HOME/.local/share/gem/ruby/3.1.0:$HOME/go/bin:$PATH
+export MANPAGER='nvim +Man!'
+
+# default browser
+export BROWSER="/usr/bin/firefox"
+export WWW_HOME="https://duckduckgo.com/lite"
+
+# +---------+
+# | ALIASES |
+# +---------+
+
+source "$XDG_CONFIG_HOME/zsh/aliases"
+
+# +---------+
+# | SCRIPTS |
+# +---------+
+
+source "$XDG_CONFIG_HOME/zsh/scripts.sh"
+
+export PASSWORD_STORE_CLIP_TIME='90'    # set-up for 90 seconds clipboard clear for pass
+export WEGORC=$XDG_CONFIG_HOME/wego/.wegorc
