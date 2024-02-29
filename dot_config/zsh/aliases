@@ -41,36 +41,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
-# +--------+
-# | pacman |
-# +--------+
-
-alias paci='sudo pacman -S'               # install
-alias pachi='sudo pacman -Ql'             # Pacman Has Installed - what files where installed in a package
-alias pacs='sudo pacman -Ss'              # search
-alias pacu='sudo pacman -Syu'             # update
-alias pacr='sudo pacman -R'               # remove package but not dependencies
-alias pacrr='sudo pacman -Rs'             # remove package with unused dependencies by other softwares
-alias pacrc='sudo pacman -Sc'             # remove pacman's cache
-alias pacro='pacman -Rns $(pacman -Qtdq)'
-alias pacrl='rm /var/lib/pacman/db.lck'   # pacman remove locks
-alias pacls="sudo pacman -Qe"
-alias pacc='sudo pacman -Sc'
-alias paccc='sudo pacman -Scc'            # empty the whole cache
-
-# +-----+
-# | yay |
-# +-----+
-
-alias yayi='yay -S'     # install
-alias yayhi='yay -Ql'   # Yay Has Installed - what files where installed in a package
-alias yays='yay -Ss'    # search
-alias yayu='yay -Syu'   # update
-alias yayr='yay -R'     # remove package but not dependencies
-alias yayrr='yay -Rs'   # remove package with unused dependencies by other softwares
-alias yayrc='yay -Sc'   # remove yay's cache
-alias yayls="yay -Qe"
-
 # +-----+
 # | git |
 # +-----+
@@ -168,10 +138,14 @@ alias os="oil"
 alias work="$HOME/workspace"
 alias doc="$HOME/Documents"
 alias dow="$HOME/Downloads"
-alias dot="$HOME/.dotfiles"
 
 # +---------+
 # | surfraw |
 # +---------+
 alias sr='sr -browser=w3m'
-alias surfraw='surfraw -browser=brave'
+alias surfraw='surfraw -browser=min'
+
+# +---------+
+# | wttr.in |
+# +---------+
+alias wttr="curl 'wttr.in/wieliczka?q&lang=pl'"

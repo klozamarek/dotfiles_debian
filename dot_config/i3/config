@@ -71,21 +71,19 @@ workspace_auto_back_and_forth yes
 #------ Launcher mode ------
 # Press $mod+o followed by either b, f, m, Escape or Return to launch Brave
 # Firefox or Min browsers or return to the default mode, respectively
-set $mode_launcher Launch: [f]irefox [m]in 
+set $mode_launcher Launch: [f]irefox [b]rave 
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
-    # bindsym b exec brave
-    bindsym f exec firefox
-    bindsym m exec min
+    bindsym f exec --no-startup-id firefox
+    bindsym b exec --np-startup-id brave-browser
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 #---------------------------
-
+bindsym $mod+Shift+f exec --no-startup-id firefox
 assign [class="Firefox-esr" instance="Navigator"] $ws2
-# assign [class="Brave-browser" instance="brave-browser"] $ws2
-assign [class="Min" instance="min"] $ws2
+assign [class="Brave-browser" instance="brave-browser"] $ws2
 
 # split in horizontal orientation
 bindsym $mod+h split h; exec --no-startup-id notify-send --expire-time=1000 'tile horizontally'
