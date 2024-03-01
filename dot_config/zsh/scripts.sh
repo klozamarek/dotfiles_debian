@@ -141,7 +141,7 @@ n ()
 # +--------+
 
 backup() {
-    "$DOTFILES/bash/scripts/backup/backup.sh" "-x" "$@" "$DOTFILES/bash/scripts/backup/dir.csv"
+    "$XDG_CONFIG_HOME/bash/scripts/backup/backup.sh" "-x" "$@" "$XDG_CONFIG_HOME/bash/scripts/backup/dir.csv"
 }
 
 # +------+
