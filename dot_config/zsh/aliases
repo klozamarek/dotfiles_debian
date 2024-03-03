@@ -149,3 +149,21 @@ alias surfraw='surfraw -browser=min'
 # | wttr.in |
 # +---------+
 alias wttr="curl 'wttr.in/wieliczka?q&lang=pl'"
+
+# +---------+
+# | chezmoi |
+# +---------+
+# {{{
+alias cm="chezmoi"
+alias cma="chezmoi add"
+alias cme="chezmoi edit"
+alias cmf="chezmoi forget"
+alias cmap="chezmoi apply"
+alias cmr="chezmoi remove"
+alias cmd="chezmoi diff"
+alias cmm="chezmoi merge"
+alias cmu="chezmoi update -v"
+alias cmra="chezmoi re-add"
+alias cmcd="chezmoi cd"
+alias cmdoc="chezmoi doctor"
+# }}}
