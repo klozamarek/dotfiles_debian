@@ -460,4 +460,25 @@ cfg-w3mmailcap() {chezmoi edit /home/ssserpent/.w3m/mailcap ;}
 cfg-w3murimethodmap() {chezmoi edit /home/ssserpent/.w3m/urimethodmap ;}
 # cfg-() {chezmoi edit ;}
 #--}}}
-
+#{{{--configurations reload
+#------------------------------------------------------
+# rld-bashrc() { source ~/.bashrc ;}
+rld-font() { fc-cache -v -f ;}
+rld-grub() { sudo grub-mkconfig -o /boot/grub/grub.cfg ;}
+rld-greenclip() { killall greenclip ; nohup greenclip daemon > /dev/null 2>&1 & }
+# rld-keynav() { killall keynav ; keynav daemonize ;}
+rld-updatedb() { sudo updatedb ;}
+# rld-rawdog() { rawdog -Wuwv ;}
+rld-xbindkeys() { killall xbindkeys ; xbindkeys ;}
+# rld-hyperkey() { xmodmap ~/.Xmodmap; killall xcape ; xcape -e 'Hyper_L=Return' ; killall xbindkeys ; xbindkeys ;}
+# rld-xcape() { killall xcape ; xcape -e 'Hyper_L=Return' ;}
+# rld-xdefaults() { xrdb ~/.Xdefaults ;}
+rld-xmodmap() { xmodmap ~/.Xmodmap ;}
+# rld-xmodmap-uskeyboardlayout() { setxkbmap -layout us ;} # reset back to US keyboard http://unix.stackexchange.com/a/151046
+rld-xresources() { xrdb -load ~/.Xresources ;}
+rld-zshrc() { source ~/.zshrc ;}
+rld-samba() { sudo systemctl restart nmb.service smb.service ;}
+rld-zshenv() { source ~/.zshenv ;}
+rld-aliases() { source ~/.config/zsh/aliases ;}
+rld-scripts() {source ~/.config/zsh/scripts.sh ;}
+# --}}}
