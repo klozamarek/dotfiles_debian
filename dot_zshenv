@@ -23,7 +23,7 @@ export PATH=$HOME/.local/bin:/snap/bin:$HOME/.local/share/gem/ruby/3.1.0:$HOME/g
 export MANPAGER='nvim +Man!'
 
 # default browser
-# export BROWSER="/usr/bin/min"
+export BROWSER="/usr/bin/min"
 export WWW_HOME="https://duckduckgo.com/lite"
 
 # +---------+
@@ -42,3 +42,11 @@ export PASSWORD_STORE_CLIP_TIME='90'    # set-up for 90 seconds clipboard clear 
 export WEGORC=$XDG_CONFIG_HOME/wego/.wegorc
 apt_pref='apt'
 apt_upgr='full-upgrade'
+
+# +----------+
+# | FOR BUKU |
+# +----------+
+# export BUKUSERVER_OPEN_IN_NEW_TAB='true'
+# export BUKUSERVER_THEME='slate'
+# export BUKUSERVER_LOCALE='pl'
+# export BUKUSERVER_PER_PAGE='30'

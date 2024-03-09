@@ -253,8 +253,8 @@ exec --no-startup-id nm-applet &
 # exec --no-startup-id xfce4-power-manager &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id /usr/bin/sparky-polkit &
-exec --no-startup-id xautolock -time 15 -locker 'i3lock-fancy -g -p' & ## this command activates screenlock after 10 minutes of inactivity ##
-exec --no-startup-id xss-lock -- i3lock-fancy -g -p & ## this command activates screenlock when system resumes from sleep/hibernation ##
+# exec --no-startup-id xautolock -time 15 -locker 'i3lock-fancy -g -p' & ## this command activates screenlock after 10 minutes of inactivity ##
+# exec --no-startup-id xss-lock -- i3lock-fancy -g -p & ## this command activates screenlock when system resumes from sleep/hibernation ##
 # exec_always --no-startup-id conky --config=/opt/conky/conky-sparky-i3.conf &
 exec --no-startup-id thunar-daemon &
 exec --no-startup-id xdg-user-dirs-update &
