@@ -84,7 +84,8 @@ mode "$mode_launcher" {
 bindsym $mod+Shift+f exec --no-startup-id firefox
 assign [class="Firefox-esr" instance="Navigator"] $ws2
 assign [class="Min" instance="min"] $ws2
-
+assign [class="Tor Browser" instance="Navigator"] $ws9
+assign [class="calibre" instance="calibre-gui"] $ws8
 # split in horizontal orientation
 bindsym $mod+h split h; exec --no-startup-id notify-send --expire-time=1000 'tile horizontally'
 
@@ -258,6 +259,7 @@ exec --no-startup-id /usr/bin/sparky-polkit &
 # exec_always --no-startup-id conky --config=/opt/conky/conky-sparky-i3.conf &
 exec --no-startup-id thunar-daemon &
 exec --no-startup-id xdg-user-dirs-update &
+exec --no-startup-id kdeconnect-indicator &
 
 #quit
 bindsym $mod+Shift+e exec --no-startup-id /usr/share/i3blocks/shutdown_menu_sparky
@@ -278,8 +280,8 @@ bindsym $mod+Ctrl+u exec --no-startup-id gufw
 bindsym $mod+Ctrl+p exec --no-startup-id system-config-printer
 # lxtask
 bindsym $mod+Ctrl+x exec --no-startup-id lxtask
-# gscreenshot
-bindsym $mod+Ctrl+s exec --no-startup-id gscreenshot
+# gnome-screenshot
+bindsym $mod+Ctrl+s exec --no-startup-id gnome-screenshot
 
 #CAPS/NUM
 bindsym --release Caps_Lock 	exec --no-startup-id "pkill -SIGRTMIN+11 i3blocks; notify-send --expire-time=1000 'Capslock toggle'"
